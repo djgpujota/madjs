@@ -1,13 +1,16 @@
 from flask import Flask 
-from flask import render_template,request,redirect
+from flask import render_template,request,redirect,flash,url_for
 from datetime import datetime
 from random import randint
 
+from flask.helpers import url_for
 
+from modules.users import users
 
 
 
 app=Flask(__name__)
+app.secret_key="Develoteca"
 
 # index 
 @app.route('/')
@@ -20,11 +23,32 @@ def index():
 def loguin():
    return render_template('users/login.html')
 
-@app.route('/users/registrar')
+@app.route('/users/registrar/')
 def registrar():
+
    return render_template('users/registrar.html')
 
+@app.route('/registrar', methods=['POST'])
+def registrer():
+   name=request.form['txtNombre']
+   dir=request.form['txtDireccion']
+   telf=request.form['txtTelefono']
+   email=request.form['txtEmail']
+   clave1=request.form['txtClave1']
+   clave2=request.form['txtClave2']
 
+
+   if(name=='' or dir=='' or telf=='' or email=='' or clave1=='' or clave2==''):
+      flash('Error existen Campos vacios')
+      return redirect(url_for('registrar'))
+      
+   
+
+   users.registro(name,dir,telf,email,clave1)
+   # print(name,dir,telf,email,clave1,clave2)
+   
+
+   return redirect('/users/registrar/')
 # admin
 @app.route('/panel')
 def panel():
@@ -61,7 +85,9 @@ def reservaCliente():
 
 
 
-
+# @app.route('/ejemplo')
+# def ejemplo():
+#    return render_template('aqui la ruta')
 
 
 
