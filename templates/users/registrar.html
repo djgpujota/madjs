@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADJS</title>
+    <link rel="stylesheet" href="../../static/css/register.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-register">
+            <h1 class="tittle">Registro</h1>
+
+            <form class="" action="/users/registrar" method="post">
+               <label for="">Nombre:</label><br> 
+                <input class="input" type="text" id="" placeholder="Nombre" value=" {{name}}"><br>
+            <label for="">Cedula:</label><br> 
+                <input class="input" type="text" id="" placeholder="Cedula" value=" {{cedula}}"><br>
+                 <label for="">Email:</label><br> 
+                <input class="input" type="text" id="" placeholder="Email" value=" {{email}}"><br>
+                 <label for="">Direccion:</label><br> 
+                <input class="input" type="text" id="" placeholder="Direccion" value=" {{direccion}}"><br>
+               <label for="">Contraseña:</label><br> 
+                <input class="input" type="password" id="" placeholder="Contraseña" value=" {{password}}"><br>
+                 <label for="">Repita la contraseña:</label><br> 
+                <input class="input" type="password" id="" placeholder="Repita la contraseña" value="{{confirm_password}}"><br>
+                 <p>Al registrate aceptas los Terminos y Condiciones </p> 
+                <button type="submit" class="botons">Registrarse</button>
+                <p>¿Ya tiene cuenta? <a href="./users/login">Ingresar</a></p>
+
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
+    
