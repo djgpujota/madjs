@@ -6,8 +6,7 @@ from random import randint
 from flask.helpers import url_for
 
 from modules.users import users
-
-
+from wtforms import Form, BooleanField, StringField, validators
 
 app=Flask(__name__)
 app.secret_key="Develoteca"
