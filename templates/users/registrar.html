@@ -6,30 +6,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MADJS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../static/css/register.css">
 </head>
 
 <body>
+
+
+    
     <div class="container">
         <div class="form-register">
             <h1 class="tittle">Registro</h1>
+            <br>
+            {% with messages = get_flashed_messages()%}
+                {% if messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in messages %}
+                            {{message}}
+                        {% endfor %}
 
-            <form class="" action="/users/registrar" method="post">
+                    </div>
+
+                {% endif %}
+
+            {% endwith %}
+            <br>
+            <form class="" action="" method="POST">
                <label for="">Nombre:</label><br> 
-                <input class="input" type="text" id="" placeholder="Nombre" value=" {{name}}"><br>
-            <label for="">Cedula:</label><br> 
-                <input class="input" type="text" id="" placeholder="Cedula" value=" {{cedula}}"><br>
+                {{form.nombre(class_="input")}}
+                {% for error in form.nombre.errors %}
+                    <span style="color: brown;"> {{error}}</span>
+                    <br>
+                {% endfor %}
+            <label for="">Direccion:</label><br> 
+                {{form.direccion(class_="input")}}
+                {% for error in form.direccion.errors %}
+                    <span style="color: brown;"> {{error}}</span>
+                    <br>
+                {% endfor %}
+                
+                 <label for="">Telefono:</label><br>
+                {{form.telefono(class_="input")}}
+                {% for error in form.telefono.errors %}
+                    <span style="color: brown;"> {{error}}</span>
+                    <br>
+                {% endfor %}
                  <label for="">Email:</label><br> 
-                <input class="input" type="text" id="" placeholder="Email" value=" {{email}}"><br>
-                 <label for="">Direccion:</label><br> 
-                <input class="input" type="text" id="" placeholder="Direccion" value=" {{direccion}}"><br>
+                 {{form.correo(class_="input")}}
+                 {% for error in form.correo.errors %}
+                     <span style="color: brown;"> {{error}}</span>
+                     <br>
+                 {% endfor %}
                <label for="">Contraseña:</label><br> 
-                <input class="input" type="password" id="" placeholder="Contraseña" value=" {{password}}"><br>
-                 <label for="">Repita la contraseña:</label><br> 
-                <input class="input" type="password" id="" placeholder="Repita la contraseña" value="{{confirm_password}}"><br>
+                {{form.clave(class_="input")}}
+                {% for error in form.clave.errors %}
+                    <span style="color: brown;"> {{error}}</span>
+                    <br>
+                {% endfor %}
+                <br>
                  <p>Al registrate aceptas los Terminos y Condiciones </p> 
+                 {{form.hidden_tag()}}
                 <button type="submit" class="botons">Registrarse</button>
-                <p>¿Ya tiene cuenta? <a href="./users/login">Ingresar</a></p>
+                <p>¿Volver? <a href="/users/login">Ingresar</a></p>
 
             </form>
 
