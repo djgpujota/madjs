@@ -1,0 +1,61 @@
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+   <link rel="stylesheet" href="../static/css/edit.css">
+  <!-- Modal -->
+
+  <body >
+    
+    <font>
+  
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-header btn btn-dark">
+          <h5 class="#" id="exampleModalLabel">INGRESE LOS DATOS PARA ACTUALIZAR RESERVAR</h5>
+          <a type="button" class="btn-close" aria-label="Close" href="/cliente/almacenados"></a>
+        </div>
+        <div class=" btn btn-warning">
+          
+            <center>
+          <!-- aqui esta para madar a la base de datos -->
+          <FORM class="negro" method="POST" action="/update" enctype="multipart/form-data">        
+            {% for fora in formulario %}
+            <label for="">Nombres:</label><br> 
+            <input class="input form-control"" type="text" id="txtNombre" name="txtNombre" placeholder="ingrese sus nombres " value="{{fora[4]}}"><br>
+              <br> 
+            <label for="">  Cedula:</label><br> 
+             <input class="input form-control"" type="number" id="txtCedula" name="txtCedula" placeholder="ingrese su cedula" value="{{fora[5]}}"><br>
+             <label for="">Correo:</label><br> 
+            <input type="email" class="form-control" id="txtCorreo" name="txtCorreo"  value="{{fora[6]}}"  placeholder="Ingrese su correo"><br>
+             <label for="">fecha para reservar su entrega:</label><br> 
+             <input class="input form-control" type="date" id="txtFecha" name="txtFecha" placeholder="Ingrese fecha para reservar" value="{{fora[8]}}"><br>
+            
+             <br>
+            
+             <div>
+             <button type="submit" class="botons btn btn-success">Reservar</button>
+             <a class="btn btn-danger"  href="/destroy/{{fora[0]}}">Eliminar</a>
+                <a type="button" class="btn btn-secondary" aria-current="page" href="/cliente/almacenados">close</a>
+          </div>
+          {%endfor%} 
+         </form>
+        </center>
+<!-- aqui termina para mandar a la base de datos -->
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+        
+</body>
+
+        
+
+
+
+
+
+
+

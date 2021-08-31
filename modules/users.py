@@ -1,11 +1,7 @@
-from modules.database import con,cerrarConexion
+from modules.database import abrirConexion,cerrarConexion
 
 
 class users():
-    
-
-        
-        
     def registro(name,dir,telf,email,clave1):
         name=name
         dir=dir
@@ -14,7 +10,7 @@ class users():
         clave1=clave1
 
         # Llammamos a la conexion a la base de datos
-        conexion=con
+        conexion=abrirConexion()
         #Creamos el cursor con la conexion anteriormente llamado
         cursor= conexion.cursor()
 
@@ -42,6 +38,6 @@ class users():
             conexion.commit()
         
         
-        cerrarConexion()
+        #cerrarConexion()
         
 # users.registro('Dylan2','alal',999,'das@gmail.com','1234')
