@@ -1,0 +1,229 @@
+{% extends "layout.html" %}
+{%block busqueda%}
+<form  class="d-flex" method="post" action="">
+              <input name="producto" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+{%endblock%}
+{% block content %}
+
+<link rel="stylesheet" href="../../static/css/index_cliente.css">
+<br>
+<center>
+<h1 class= 'text-success'> Productos</h1>
+</center>
+<br>
+
+<!-- aqui es la cabezera de los productos -->
+
+  <div class="border">
+    <center>
+        <br>
+        <div class="contec">
+            <div class="row">
+                <div class="col">
+                    <h2>Productos de Limpieza</h2>
+                    <img src="imagenes\imagen2.jpg" style="width: 200px height 200px"  alt="">
+<p>Guitarra fender con nueve pastillas y modulaciones</p> 
+<a href=" productos fender.html"> ver mas....</a>
+<br>
+<!-- aqui empieza dentro  de los productos -->
+<!-- aqui empieza el modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Click para reservar
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade btn btn-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-header btn btn-dark">
+          <h5 class="modal-title " id="exampleModalLabel">INGRESE LOS DATOS PARA RESERVAR</h5>
+          <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body btn btn-warning">
+            <center>
+          <!-- aqui esta para madar a la base de datos -->
+          <form class="negro" action="/reservar" method="POST">
+            <label for="">Nombres:</label><br> 
+            <input class="input form-control"" type="text" id="txtNombre" name="txtNombre" placeholder="ingrese sus nombres " value="{{nombre}}"><br>
+              <label for="">Cedula:</label><br> 
+             <input class="input form-control"" type="number" id="txtCedula" name="txtCedula" placeholder="ingrese su cedula" value="{{cedula}}"><br>
+             <label for="">Correo:</label><br> 
+            <input type="email" class="form-control" id="txtCorreo" name="txtCorreo"  value="{{correo}}"  placeholder="Ingrese su correo"><br>
+             <label for="">fecha para reservar su entrega:</label><br> 
+             <input class="input form-control" type="date" id="txtFecha" name="txtFecha" placeholder="Ingrese fecha para reservar" value="{{fecha}}"><br>
+             <br> 
+             <div>
+             <button type="submit" class="botons btn btn-success">Reservar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>      
+         </form>
+        </center>
+<!-- aqui termina para mandar a la base de datos -->
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- aqui termina el modal  -->
+
+                </div>
+                <div class="col">
+                    <h2>Bebidad</h2>
+                    <img src="imagenes\piano.jpg" style="width: 200px height 200px" alt="">
+<p>Piano de once octavas con teclas sensibles al tacto</p>
+<a href=""> ver mas....</a>
+
+<!-- aqui empiza el otro modal  -->
+<br>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Click para reservar
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade btn btn-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-header btn btn-dark">
+          <h5 class="modal-title " id="exampleModalLabel">INGRESE LOS DATOS PARA RESERVAR</h5>
+          <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body btn btn-warning">
+            <center>
+          <!-- aqui esta para madar a la base de datos -->
+          <form class="negro" action="/reservar" method="POST">
+            <label for="">Nombres:</label><br> 
+            <input class="input form-control"" type="text" id="txtNombre" name="txtNombre" placeholder="ingrese sus nombres " value="{{nombre}}"><br>
+              <label for="">Cedula:</label><br> 
+             <input class="input form-control"" type="number" id="txtCedula" name="txtCedula" placeholder="ingrese su cedula" value="{{cedula}}"><br>
+             <label for="">Correo:</label><br> 
+            <input type="email" class="form-control" id="txtCorreo" name="txtCorreo"  value="{{correo}}"  placeholder="Ingrese su correo"><br>
+             <label for="">fecha para reservar su entrega:</label><br> 
+             <input class="input form-control" type="date" id="txtFecha" name="txtFecha" placeholder="Ingrese fecha para reservar" value="{{fecha}}"><br>
+             <br> 
+             <div>
+             <button type="submit" class="botons btn btn-success">Reservar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>      
+         </form>
+        </center>
+<!-- aqui termina para mandar a la base de datos -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- aqui termina el modal  -->
+
+                </div>
+                <div class="col">
+                    <h2>Carnes</h2>
+                    <img src="" style="width: 200px height 200px" alt="">
+<p>Bajo electrico con 3 pastillas, modulaciones y sonidos estandar</p>
+<a href=""> ver mas....</a>
+<!-- aqui empieza el modal -->
+<br>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Click para reservar
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade btn btn-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-header btn btn-dark">
+          <h5 class="modal-title " id="exampleModalLabel">INGRESE LOS DATOS PARA RESERVAR</h5>
+          <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body btn btn-warning">
+            <center>
+          <!-- aqui esta para madar a la base de datos -->
+          <form class="negro" action="/reservar" method="POST">
+            <label for="">Nombres:</label><br> 
+            <input class="input form-control"" type="text" id="txtNombre" name="txtNombre" placeholder="ingrese sus nombres " value="{{nombre}}"><br>
+              <label for="">Cedula:</label><br> 
+             <input class="input form-control"" type="number" id="txtCedula" name="txtCedula" placeholder="ingrese su cedula" value="{{cedula}}"><br>
+             <label for="">Correo:</label><br> 
+            <input type="email" class="form-control" id="txtCorreo" name="txtCorreo"  value="{{correo}}"  placeholder="Ingrese su correo"><br>
+             <label for="">fecha para reservar su entrega:</label><br> 
+             <input class="input form-control" type="date" id="txtFecha" name="txtFecha" placeholder="Ingrese fecha para reservar" value="{{fecha}}"><br>
+             <br> 
+             <div>
+             <button type="submit" class="botons btn btn-success">Reservar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>      
+         </form>
+        </center>
+<!-- aqui termina para mandar a la base de datos -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- aqui termina el modal -->
+                </div>
+            </div>
+            <div class="col">
+                <h2>Vegetales</h2>
+                <img src="" style="width: 200px height 200px" alt="">
+<p>Bajo electrico con 3 pastillas, modulaciones y sonidos estandar</p>
+<a href=""> ver mas....</a>
+
+<!-- aqui empieza el modal -->
+<br>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Click para reservar
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade btn btn-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-header btn btn-dark">
+          <h5 class="modal-title " id="exampleModalLabel">INGRESE LOS DATOS PARA RESERVAR</h5>
+          <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body btn btn-warning">
+            <center>
+          <!-- aqui esta para madar a la base de datos -->
+          <form class="negro" action="/reservar" method="POST">
+            <label for="">Nombres:</label><br> 
+            <input class="input form-control"" type="text" id="txtNombre" name="txtNombre" placeholder="ingrese sus nombres " value="{{nombre}}"><br>
+              <label for="">Cedula:</label><br> 
+             <input class="input form-control"" type="number" id="txtCedula" name="txtCedula" placeholder="ingrese su cedula" value="{{cedula}}"><br>
+             <label for="">Correo:</label><br> 
+            <input type="email" class="form-control" id="txtCorreo" name="txtCorreo"  value="{{correo}}"  placeholder="Ingrese su correo"><br>
+             <label for="">fecha para reservar su entrega:</label><br> 
+             <input class="input form-control" type="date" id="txtFecha" name="txtFecha" placeholder="Ingrese fecha para reservar" value="{{fecha}}"><br>
+             <br> 
+             <div>
+             <button type="submit" class="botons btn btn-success">Reservar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>      
+         </form>
+        </center>
+<!-- aqui termina para mandar a la base de datos -->
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- aqui empieza el modal -->
+            </div>
+
+            
+        </div> </br>
+    </center>
+</div>
+
+
+
+
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+
+
+{% endblock %}
