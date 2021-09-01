@@ -12,6 +12,8 @@ USUARIO
 
 En el INDEX solo es para redireccionar a registrar como al almacenado para editar y eliminar
 INDEX redireccionar = ALMACENADOS,reservas(EN CLIENTE)
+SEARCH=EN EL SEARCH SE DEBE BUSCAR EL PRODUCTO
+
 
 RESERVAS = CRUD RESERVAS insert into
 

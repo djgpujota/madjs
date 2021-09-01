@@ -1,15 +1,5 @@
 # MODULOS se comunica con los modulos inferiores, envia datos a la db y envia datos a las rutas 
-from database import con
-
-def resiva():
-        cone=con
-        cursor= cone.cursor()
-        cursor.execute('SELECT * FROM rol')
-        print(cursor.fetchall())
-        
-        cone.commit
-       
-        
+# from backAdmin.modulo_productos_ingresados import prueba1
+from modules.database import abrirConexion,cerrarConexion
 
 
-resiva()
