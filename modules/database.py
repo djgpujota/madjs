@@ -1,6 +1,7 @@
 import psycopg2
 
 
+# try:
 def abrirConexion():
         con= psycopg2.connect(
             host = 'localhost',
@@ -8,11 +9,13 @@ def abrirConexion():
             user = 'postgres',
             password  = '152018'
             )
-        return con 
+        return con
+
+# except:
+            # print('Error al conectarse ')    
 
 def cerrarConexion(con):
-    con.close()
-
+    con.close() 
 
 
 
