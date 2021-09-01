@@ -119,15 +119,16 @@ def reservar():
 @app.route('/reservar', methods=['POST'])
 def reser():
    nombre=request.form['txtNombre']
+   cantidad=request.form['txtCantidad']
    cedula=request.form['txtCedula']
    correo=request.form['txtCorreo']
    fecha=request.form['txtFecha']
 
-   if(nombre=='' or cedula==''  or correo=='' or fecha=='' ):
+   if(nombre=='' or cantidad =='' or cedula==''  or correo=='' or fecha=='' ):
       flash('Error existen Campos vacios')
       return redirect(url_for('reservar'))
 
-   ints.resr(nombre , cedula,correo,fecha)
+   ints.resr(nombre , cantidad,cedula,correo,fecha)
    #print(nombre , cedula,correo,fecha)
    return redirect('/cliente/reservar/')
 
@@ -140,15 +141,16 @@ def resert():
 @app.route('/reservar', methods=['POST'])
 def resr():
    nombre=request.form['txtNombre']
+   cantidad=request.form['txtCantidad']
    cedula=request.form['txtCedula']
    correo=request.form['txtCorreo']
    fecha=request.form['txtFecha']
 
-   if(nombre=='' or cedula==''  or correo=='' or fecha=='' ):
+   if(nombre=='' or cantidad == '' or cedula==''  or correo=='' or fecha=='' ):
       flash('Error existen Campos vacios')
       return redirect(url_for('reservar'))
 
-   ints.resr(nombre , cedula,correo,fecha)
+   ints.resr(nombre , cantidad,cedula,correo,fecha)
    #print(nombre , cedula,correo,fecha)
    return redirect('/cliente/limpieza/')
 
@@ -165,15 +167,16 @@ def rese():
 @app.route('/bebid', methods=['POST'])
 def bbs():
    nombre=request.form['txtNombre']
+   cantidad=request.form['txtCantidad']
    cedula=request.form['txtCedula']
    correo=request.form['txtCorreo']
    fecha=request.form['txtFecha']
 
-   if(nombre=='' or cedula==''  or correo=='' or fecha=='' ):
+   if(nombre=='' or cantidad == '' or cedula==''  or correo=='' or fecha=='' ):
       flash('Error existen Campos vacios')
       return redirect(url_for('rese'))
 
-   bebidas.beb(nombre , cedula,correo,fecha)
+   bebidas.beb(nombre ,cantidad, cedula,correo,fecha)
    #print(nombre , cedula,correo,fecha)
    return redirect('/cliente/bebidas/')
 
@@ -187,15 +190,16 @@ def crn():
 @app.route('/carnes', methods=['POST'])
 def crs():
    nombre=request.form['txtNombre']
+   cantidad=request.form['txtCantidad']
    cedula=request.form['txtCedula']
    correo=request.form['txtCorreo']
    fecha=request.form['txtFecha']
 
-   if(nombre=='' or cedula==''  or correo=='' or fecha=='' ):
+   if(nombre=='' or cantidad == '' or cedula==''  or correo=='' or fecha=='' ):
       flash('Error existen Campos vacios')
       return redirect(url_for('rese'))
 
-   carnes.car(nombre , cedula,correo,fecha)
+   carnes.car(nombre ,cantidad, cedula,correo,fecha)
    #print(nombre , cedula,correo,fecha)
    return redirect('/cliente/carnes/')
 
@@ -209,15 +213,16 @@ def veget():
 @app.route('/vegetales', methods=['POST'])
 def vgt():
    nombre=request.form['txtNombre']
+   cantidad=request.form['txtCantidad']
    cedula=request.form['txtCedula']
    correo=request.form['txtCorreo']
    fecha=request.form['txtFecha']
 
-   if(nombre=='' or cedula==''  or correo=='' or fecha=='' ):
+   if(nombre=='' or cantidad == '' or cedula==''  or correo=='' or fecha=='' ):
       flash('Error existen Campos vacios')
       return redirect(url_for('rese'))
 
-   vegetales.ve(nombre , cedula,correo,fecha)
+   vegetales.ve(nombre , cantidad,cedula,correo,fecha)
    #print(nombre , cedula,correo,fecha)
    return redirect('/cliente/vegetales/')
 #
@@ -232,15 +237,16 @@ def actua():
 def act():
    if request.method== 'POST':
     nombre=request.form['txtNombre']
+    cantidad=request.form['txtCantidad']
     cedula=request.form['txtCedula']
     correo=request.form['txtCorreo']
     fecha=request.form['txtFecha']
 
-    if(nombre=='' or cedula==''  or correo=='' or fecha=='' ):
+    if(nombre=='' or cantidad == '' or cedula==''  or correo=='' or fecha=='' ):
        flash('Error existen Campos vacios')
        return redirect(url_for('almacenados'))
 
-   update.actualizar(nombre , cedula,correo,fecha)
+   update.actualizar(nombre ,cantidad, cedula,correo,fecha)
    #print(nombre , cedula,correo,fecha)
    return redirect(url_for('almacenados'))
 

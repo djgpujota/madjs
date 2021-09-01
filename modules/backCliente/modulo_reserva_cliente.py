@@ -24,8 +24,9 @@ def insert ():
 
 class ints():
 
-    def resr(nombre,cedula,correo,fecha):
+    def resr(nombre,cantidad,cedula,correo,fecha):
       nombre=nombre
+      cantidad=cantidad
       cedula=cedula
       correo=correo
       fecha=fecha
@@ -41,13 +42,14 @@ class ints():
             cursor.execute("select id_ordenes_clientes from ordenes_clientes")
             a1 = cursor.fetchall()
             a2= (len(a1))+1
-            cursor.execute("select id_clientes from ordenes_clientes")
-            b1 = cursor.fetchall()
-            b2=(len(b1))+1
-            cursor.execute("select numero_ordenes_clientes from ordenes_clientes")
+            cursor.execute("select id_personas from personas WHERE nombre_personas='{}'".format(nombre))
+            b1 = cursor.fetchone()
+            b1=b1[0]
+            cursor.execute("select id_producto_ingresado from nombre_producto_ingresado='{}'".format())
             c1 = cursor.fetchall()
             c2=(len(c1))+1
-            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},'{}','Productos de limpieza','{}',0)".format(a2,b2,c2,nombre,cedula,correo,fecha))
+            
+            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},{},'{}','Productos de limpieza','{}',0)".format(a2,b1,c2,nombre,cantidad,cedula,correo,fecha))
             conexion.commit()
       else:
             value=1
@@ -55,7 +57,7 @@ class ints():
             value2=1
             # cursor.execute("insert into personas (id_personas,id_rol,nombre_personas,dir_personas,telf_personas,email_personas,clave_personas) values ({},2,'dylan','12',12,'12','12')".format(value)
 
-            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},'{}','Productos de limpieza','{}',0)".format(value,value1,value2,nombre,cedula,correo,fecha))
+            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},{},'{}','Productos de limpieza','{}',0)".format(value,value1,value2,nombre,cantidad,cedula,correo,fecha))
 
             conexion.commit()
 
@@ -67,8 +69,9 @@ class ints():
 
 class bebidas():
 
-    def beb(nombre,cedula,correo,fecha):
+    def beb(nombre,cantidad,cedula,correo,fecha):
       nombre=nombre
+      cantidad=cantidad
       cedula=cedula
       correo=correo
       fecha=fecha
@@ -84,13 +87,13 @@ class bebidas():
             cursor.execute("select id_ordenes_clientes from ordenes_clientes")
             a1 = cursor.fetchall()
             a2= (len(a1))+1
-            cursor.execute("select id_clientes from ordenes_clientes")
+            cursor.execute("select id_personas from ordenes_clientes")
             b1 = cursor.fetchall()
             b2=(len(b1))+1
-            cursor.execute("select numero_ordenes_clientes from ordenes_clientes")
+            cursor.execute("select id_producto_ingresado from ordenes_clientes")
             c1 = cursor.fetchall()
             c2=(len(c1))+1
-            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},'{}','bebidas','{}',0)".format(a2,b2,c2,nombre,cedula,correo,fecha))
+            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},{},'{}','Bebidas','{}',0)".format(a2,b2,c2,nombre,cantidad,cedula,correo,fecha))
             conexion.commit()
       else:
             value=1
@@ -98,7 +101,7 @@ class bebidas():
             value2=1
             # cursor.execute("insert into personas (id_personas,id_rol,nombre_personas,dir_personas,telf_personas,email_personas,clave_personas) values ({},2,'dylan','12',12,'12','12')".format(value)
 
-            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},'{}','bebidas','{}',0)".format(value,value1,value2,nombre,cedula,correo,fecha))
+            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},{},'{}','Bebidas','{}',0)".format(value,value1,value2,nombre,cantidad,cedula,correo,fecha))
 
             conexion.commit()
 
@@ -108,8 +111,9 @@ class bebidas():
 
 class carnes():
 
-    def car(nombre,cedula,correo,fecha):
+    def car(nombre,cantidad,cedula,correo,fecha):
       nombre=nombre
+      cantidad=cantidad
       cedula=cedula
       correo=correo
       fecha=fecha
@@ -125,13 +129,13 @@ class carnes():
             cursor.execute("select id_ordenes_clientes from ordenes_clientes")
             a1 = cursor.fetchall()
             a2= (len(a1))+1
-            cursor.execute("select id_clientes from ordenes_clientes")
+            cursor.execute("select id_personas from ordenes_clientes")
             b1 = cursor.fetchall()
             b2=(len(b1))+1
-            cursor.execute("select numero_ordenes_clientes from ordenes_clientes")
+            cursor.execute("select id_producto_ingresado from ordenes_clientes")
             c1 = cursor.fetchall()
             c2=(len(c1))+1
-            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},'{}','carnes','{}',0)".format(a2,b2,c2,nombre,cedula,correo,fecha))
+            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},{},'{}','Carnes','{}',0)".format(a2,b2,c2,nombre,cantidad,cedula,correo,fecha))
             conexion.commit()
       else:
             value=1
@@ -139,7 +143,7 @@ class carnes():
             value2=1
             # cursor.execute("insert into personas (id_personas,id_rol,nombre_personas,dir_personas,telf_personas,email_personas,clave_personas) values ({},2,'dylan','12',12,'12','12')".format(value)
 
-            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},'{}','carnes','{}',0)".format(value,value1,value2,nombre,cedula,correo,fecha))
+            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},{},'{}','Carnes','{}',0)".format(value,value1,value2,nombre,cantidad,cedula,correo,fecha))
 
             conexion.commit()
 
@@ -149,8 +153,9 @@ class carnes():
 ### vegetales
 class vegetales():
 
-    def ve(nombre,cedula,correo,fecha):
+    def ve(nombre,cantidad,cedula,correo,fecha):
       nombre=nombre
+      cantidad=cantidad
       cedula=cedula
       correo=correo
       fecha=fecha
@@ -166,13 +171,13 @@ class vegetales():
             cursor.execute("select id_ordenes_clientes from ordenes_clientes")
             a1 = cursor.fetchall()
             a2= (len(a1))+1
-            cursor.execute("select id_clientes from ordenes_clientes")
+            cursor.execute("select id_personas from ordenes_clientes")
             b1 = cursor.fetchall()
             b2=(len(b1))+1
-            cursor.execute("select numero_ordenes_clientes from ordenes_clientes")
+            cursor.execute("select id_producto_ingresado from ordenes_clientes")
             c1 = cursor.fetchall()
             c2=(len(c1))+1
-            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},'{}','vegetales','{}',0)".format(a2,b2,c2,nombre,cedula,correo,fecha))
+            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},{},'{}','Vegetales','{}',0)".format(a2,b2,c2,nombre,cantidad,cedula,correo,fecha))
             conexion.commit()
       else:
             value=1
@@ -180,7 +185,7 @@ class vegetales():
             value2=1
             # cursor.execute("insert into personas (id_personas,id_rol,nombre_personas,dir_personas,telf_personas,email_personas,clave_personas) values ({},2,'dylan','12',12,'12','12')".format(value)
 
-            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},'{}','vegetales','{}',0)".format(value,value1,value2,nombre,cedula,correo,fecha))
+            cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},{},'{}','Vegetales','{}',0)".format(value,value1,value2,nombre,cantidad,cedula,correo,fecha))
 
             conexion.commit()
 
@@ -229,8 +234,9 @@ class alm():
 
 class update():
 
-    def actualizar(nombre,cedula,correo,fecha):
+    def actualizar(nombre,cantidad,cedula,correo,fecha):
       nombre=nombre
+      cantidad=cantidad
       cedula=cedula
       correo=correo
       fecha=fecha
@@ -246,16 +252,16 @@ class update():
             cursor.execute("select id_ordenes_clientes from ordenes_clientes")
             a1 = cursor.fetchall()
             a2= (len(a1))+1
-            cursor.execute("select id_clientes from ordenes_clientes")
+            cursor.execute("select id_personas from ordenes_clientes")
             b1 = cursor.fetchall()
             b2=(len(b1))+1
-            cursor.execute("select numero_ordenes_clientes from ordenes_clientes")
+            cursor.execute("select id_producto_ingresado from ordenes_clientes")
             c1 = cursor.fetchall()
             c2=(len(c1))+1
             # cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},'{}','vegetales','{}')".format(a2,b2,c2,nombre,cedula,correo,fecha))
-            query="UPDATE  ordenes_clientes SET nombre_ordenes_cliente=%s,correo_ordenes_cliente=%s,fecha_ordenes_cliente=%s WHERE ordenes_clientes.cedula_ordenes_cliente=%s;"
+            query="UPDATE  ordenes_clientes SET nombre_ordenes_cliente=%s,cantidad_ordenes_cliente=%s,correo_ordenes_clientes=%s,fecha_ordenes_cliente=%s WHERE ordenes_clientes.cedula_ordenes_cliente=%s;"
             # query="UPDATE  ordenes_clientes SET ({},{},{},12,'{}','{}','vegetales','{}' WHERE cedula_ordenes_cliente={})".format(a2,b2,c2,nombre,cedula,correo,fecha,cedula)
-            datos=(nombre,correo,fecha,cedula)
+            datos=(nombre,cantidad,correo,fecha,cedula)
             data=cursor.execute(query,datos)
             conexion.commit()
       else:
@@ -266,9 +272,9 @@ class update():
 
             # cursor.execute("insert into ordenes_clientes values ({},{},{},12,'{}',{},'{}','vegetales','{}')".format(value,value1,value2,nombre,cedula,correo,fecha))
             # query="UPDATE  ordenes_clientes SET ({},{},{},12,'{}','{}','vegetales','{}' WHERE cedula_ordenes_cliente={})".format(value,value1,value2,nombre,correo,fecha,cedula)
-            query="UPDATE  ordenes_clientes SET nombre_ordenes_cliente=%s,correo_ordenes_cliente=%s,fecha_ordenes_cliente=%s WHERE cedula_ordenes_cliente=%s;"
+            query="UPDATE  ordenes_clientes SET nombre_ordenes_cliente=%s,cantidad_ordenes_cliente=%s,correo_ordenes_clientes=%s,fecha_ordenes_cliente=%s WHERE cedula_ordenes_cliente=%s;"
             # query="UPDATE  ordenes_clientes SET id_ordenes_clientes,id_clientes,numero_ordenes_clientes,subtotal_ordenes_clientes,nombre_ordenes_cliente,,correo_ordenes_cliente=,categoria_ordenes_cliente,fecha_ordenes_cliente WHERE cedula_ordenes_clientes;".format(value,value1,value2,nombre,cedula,correo,fecha,cedula)
-            datos=(nombre,correo,fecha,cedula)
+            datos=(nombre,cantidad,correo,fecha,cedula)
             data=cursor.execute(query,datos)
             conexion.commit()
       return data
