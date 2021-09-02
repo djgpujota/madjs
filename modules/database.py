@@ -5,7 +5,7 @@ import psycopg2
 def abrirConexion():
         con= psycopg2.connect(
             host = 'localhost',
-            database = 'Proyecto',
+            database = 'MADJS-F',
             user = 'postgres',
             password  = '152018'
             )

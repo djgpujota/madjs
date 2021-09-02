@@ -6,7 +6,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
+<style>
+ body {
+        background-color: #eaeded;
+    }
+</style>
  {% endblock %}
 
 
@@ -30,35 +34,21 @@
 </div>
 <div class= "Ocultar">
 <center>
-<h1 class= 'text-success'> Productos</h1>
+<h1 class= 'text-success'> PRODUCTOS</h1> <br>
 </center>
 <center>
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://1.bp.blogspot.com/-XdN0Kf19nJ8/WIpVQvbedZI/AAAAAAAAEcI/aZhbIUyKXcoQoRvDgmi3FM5_PQLDk-p4wCLcB/s1600/La%2Bmarca%2Bdel%2Bproducto%2BDefinici%25C3%25B3n%252C%2Bclasificaci%25C3%25B3n%252C%2Bc%25C3%25B3mo%2Bnacen%2By%2Bm%25C3%25A1s.jpg" class="d-block w-50" alt="...">
+        <img src="/static/images/Productos-portada.jpg" class="d-block w-50" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://portilloa.files.wordpress.com/2011/10/unilever1.jpg" class="d-block w-50" alt="...">
+        <img src="/static/images/Productos-portada1.jpg" class="d-block w-50" alt="...">
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 </center>
 <br>
-
-
-
-
-
-
 
 
 <div class="border">
@@ -66,29 +56,29 @@
       <br>
       <div class="contec">
           <div class="row">
-              <div class="col">
-                  <h2>Prods de limpieza</h2>
+              <div class="col border border-secondary">
+                  <h2>Limpieza</h2>
                   <img src="/static/images/limpieza.jpg" style="width: 200px;height: 200px; ">
 <p>Guitarra fender con nueve pastillas y modulaciones</p> 
-<a class="btn btn-primary" href="/cliente/limpieza">Ver mas</a>
+<a class="btn btn-success" href="/cliente/limpieza">Ver mas</a>
               </div>
-              <div class="col">
-                <h2>Bebidas  y lacteos </h2>
+              <div class="col border border-secondary">
+                <h2>Bebidas y lacteos </h2>
                 <img src="/static/images/bebidas.jpg" style="width: 200px;height: 200px; ">
 <p>Bajo electrico con 3 pastillas, modulaciones y sonidos estandar</p>
-<a class="btn btn-primary" href="/cliente/bebidas">Ver mas</a>
+<a class="btn btn-success" href="/cliente/bebidas">Ver mas</a>
             </div>
-              <div class="col">
-                  <h2>Carnes </h2>
+              <div class="col border border-secondary">
+                  <h2>Carnes</h2>
                   <img src="/static/images/carnes.jpg" style="width: 200px;height: 200px; ">
 <p>Bajo electrico con 3 pastillas, modulaciones y sonidos estandar</p>
-<a class="btn btn-primary" href="/cliente/carnes">Ver mas</a>
+<a class="btn btn-success" href="/cliente/carnes">Ver mas</a>
               </div>
-              <div class="col">
-                <h2>vegetales</h2>
+              <div class="col border border-secondary">
+                <h2>Vegetales</h2>
                 <img src="/static/images/vegetales.jpg" style="width: 200px;height: 200px; ">
 <p>Bajo electrico con 3 pastillas, modulaciones y sonidos estandar</p>
-<a class="btn btn-primary" href="/cliente/vegetales">Ver mas</a>
+<a class="btn btn-success" href="/cliente/vegetales">Ver mas</a>
             </div>
           </div>
       </div> </br>
@@ -101,10 +91,12 @@
           <!-- hasta qui-->
 
          <!-- la parte del mapa --> 
+         <br>
+         <br>
+        <div class="container">
           <head>
-              <br>
               <div class="row">
-                  <div class="col"><iframe style="width: 400px;" height="250px"
+                  <div class="col col-7"><iframe style="width: 500px;" height="300px"
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.814813167841!2d-78.45181588605377!3d-0.0759695999445665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d58f3454ada525%3A0x17a47532108ac5f1!2sPlan%20de%20Vivienda%20Ecuador%2C%20Quito%20170205!5e0!3m2!1ses!2sec!4v1610077220046!5m2!1ses!2sec"
                           width="600" height="450" frameborder="12" style="border:12;" allowfullscreen=""
                           aria-hidden="false" tabindex="0"></iframe></div>
@@ -112,27 +104,52 @@
                   <div class="col">
                       <ul></ul>
                       <li> <img src="/static/images/direccion.png" style="width: 25px;" alt="direccion"> DIRECCIÓN: Av Simon
-                          Bolivar y
-                          control-plag</li>
+                          Bolivar</li>
                       <li><img src="/static/images/whatsapp.jpg" style="width: 25px;" alt="whatsapp"> WHATSAPP: 0962639779
                       </li>
-                      <li> <img src="/static/images/gai.png" style="width:30px ;" alt="gmail">GMAIL: hz311505@gmail.com</li>
-                      <li><img src="/static/images/face.png" style="width: 25px;" alt="facebook"> FACEBOOK: steven vega</li>
+                      <li> <img src="/static/images/gai.png" style="width:30px ;" alt="gmail">GMAIL: madjs@gmail.com</li>
+                      <li><img src="/static/images/face.png" style="width: 25px;" alt="facebook"> FACEBOOK: madjs</li>
                       </ul>
                   </div>
-                  <div class="col">
-
-                  </div>
               </div>
-              </br>
           </head>
+        </div>
+</div>
+
+<div class="modal fade btn btn-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog ">
+                  <div class="modal-content ">
+                    <div class="modal-header btn btn-dark">
+                      <h5 class="modal-title " id="exampleModalLabel">INGRESE LOS DATOS PARA RESERVAR</h5>
+                      <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body btn btn-warning">
+                      
+                      <!-- aqui termina para mandar a la base de datos -->
+                    </div>
+                  </div>
+                </div>
 </div>
 
 
 <script type="text/javascript">
 
- $(document).ready(function(){
+  $(document).ready(function(){
+                $('.botonlimpieza').click(function(){
+                    var userid = $(this).data('id');
+                    $.ajax({
+                        url: '/ajaxlimpieza',
+                        type: 'post',
+                        data: {userid: userid},
+                        success: function(data){ 
+                           
+                            $('.modal-body').html(data);
+                            $('.modal-body').append(data.respuesta);
+                            $('#exampleModal').modal('show');
 
+                        }
+                    });
+                });
 function ajaxBuscarP(){
                     $.ajax({
                         url: '/ajaxBuscarP',
@@ -155,10 +172,16 @@ function ajaxBuscarP(){
                 $('#formBusqueda').submit(function(event){
                     event.preventDefault();
                     $('.Ocultar').hide();
+                    $('.mostrar').show();
                     $('.Navegacionindex').hide();
                     ajaxBuscarP();
                 });
- });
+                
+
+
+                           });
+
 </script>
+
 
 {% endblock %}

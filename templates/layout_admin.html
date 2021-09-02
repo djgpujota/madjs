@@ -7,8 +7,17 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/css/index_admin.css">
-    <!--aqui esta boostrap-->
+      <!--aqui esta las internas-->
+    <link rel="stylesheet" href="../static/css/index_admin.css">
+    
+    {% block librerias %}
+    
+    {% endblock %}
+    
+
+    
+
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -26,17 +35,21 @@
                 <a class="nav-link a" href="/modulo/inventario">INVENTARIOS</a>
                 
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/modulo/productosIngresados" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <li class="nav-item">
+                <a class="nav-link a" href="/modulo/productosIngresados">PRODUCTOS INGRESADOS</a>
+                
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link " href="/modulo/productosIngresados" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   PRODUCTOS INGRESADOS
-                </a>
+                </a> -->
                 <!-- <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                   <li><a class="dropdown-item" href="#">Action</a></li>
                   <li><a class="dropdown-item" href="#">Another action</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul> -->
-              </li>
+              <!-- </li> -->
               <li class="nav-item">
                 <a class="nav-link " href="/modulo/productosVendidos" tabindex="-1" aria-disabled="true">PRODUCTOS VENDIDOS</a>
               </li>
@@ -52,12 +65,11 @@
         </div>
       </nav>
 
-      <h1>todos</h1>
+      
 
     {% block container %}
 
     {% endblock %}
 
-   
 </body>
 </html>

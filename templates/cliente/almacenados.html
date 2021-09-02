@@ -1,5 +1,12 @@
 {% extends "layout.html" %}
 
+{% block estilos %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+ {% endblock %}
 {% block content %}
 <link rel="stylesheet" href="../static/css/almacenados.css">
 <br>
@@ -33,10 +40,13 @@
                 <thead class="table-dark">
                     <tr> 
                         <th class="blanco">Nombres</th>
+                        <th class="blanco">Cantidad</th>
+                        <th class="blanco">Nombre del Producto</th>
                         <th class="blanco">Cedula</th>
                         <th class="blanco">Correo</th>
                         <th class="blanco">Categoria del productos</th>
-                        <th class="blanco">fecha</th>
+                        <th class="blanco">Fecha</th>
+                        <th class="blanco">Total</th>
                         <th class="blanco">Restaurar</th>
                         <th class="blanco">cerrar</th>
                     </tr>
@@ -46,9 +56,12 @@
                     <tr>
                         <td class="negro">{{pp[4]}}</td>
                         <td class="negro">{{pp[5]}}</td>
+                        <td class="negro">{{pp[13]}}</td>
                         <td class="negro">{{pp[6]}}</td>
                         <td class="negro">{{pp[7]}}</td>
                         <td class="negro">{{pp[8]}}</td>
+                        <td class="negro">{{pp[9]}}</td>
+                        <td class="negro">${{pp[3]}}</td>
                         <td class="negro"> 
                             
                             <a class="btn btn-success" href="/restaurar/{{pp[0]}}">Restaurar </a> 
@@ -79,10 +92,13 @@
         <thead class="table-dark">
             <tr> 
                 <th class="blanco">Nombres</th>
+                <th class="blanco">Cantidad</th>
+                <th class="blanco">Nombre del Producto</th>
                 <th class="blanco">Cedula</th>
                 <th class="blanco">Correo</th>
                 <th class="blanco">Categoria del productos</th>
-                <th class="blanco">fecha</th>
+                <th class="blanco">Fecha</th>
+                <th class="blanco">Total</th>
                 <th class="blanco">Editar</th>
                 <th class="blanco">Eliminar</th>
             </tr>
@@ -92,12 +108,15 @@
             <tr>
                 <td class="negro">{{formulario[4]}}</td>
                 <td class="negro">{{formulario[5]}}</td>
+                <td class="negro">{{formulario[13]}}</td>
                 <td class="negro">{{formulario[6]}}</td>
                 <td class="negro">{{formulario[7]}}</td>
                 <td class="negro">{{formulario[8]}}</td>
+                <td class="negro">{{formulario[9]}}</td>
+                <td class="negro">${{formulario[3]}}</td>
                 <td class="negro"> 
                     
-                    <a class="btn btn-primary" href="/edit/{{formulario[5]}}">Editar </a> 
+                    <a class="btn btn-primary" href="/edit/{{formulario[0]}}">Editar </a> 
                     <td class="negro">
                     <!-- <a class="btn btn-danger"  href="/destroy/{{formulario[0]}}">Eliminar</a> -->
 
@@ -138,6 +157,3 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 {% endblock %}
-
-
-
