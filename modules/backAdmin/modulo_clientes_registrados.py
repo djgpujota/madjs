@@ -51,3 +51,14 @@ def busquedaCliente(name):
     conexion.commit()
     cerrarConexion(conexion)
     return consulta
+class Productoscliente:
+    def consulta(d):
+        conexion=abrirConexion()
+        cursor= conexion.cursor()
+        cursor.execute("select * from ordenes_clientes where id_personas={}".format(d))
+        consulta=cursor.fetchall()
+        cursor.execute("select count(*) from ordenes_clientes where id_personas={}".format(d))
+        total=cursor.fetchone()
+        total=total[0]
+        cerrarConexion(conexion)
+        return consulta,total

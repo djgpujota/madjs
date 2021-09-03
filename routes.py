@@ -13,7 +13,9 @@ from modules.users import users,Persona
 from wtforms import Form, BooleanField, StringField, validators
 from modules.backCliente.modulo_almacenados import buscarP
 from modules.backAdmin.modulo_productos_ingresados import productosIngresados,Actual,amostrar
-from modules.backAdmin.modulo_clientes_registrados import consulta,consultaClintes,eliminarClientes,consultaId,busquedaCliente
+from modules.backAdmin.modulo_clientes_registrados import consulta,consultaClintes,eliminarClientes,consultaId,busquedaCliente,Productoscliente
+from modules.backAdmin.modulo_reservas import moduloreservas
+from modules.backAdmin.modulo_productos_vendidos import productosVendidos
 app=Flask(__name__)
 app.secret_key="Develoteca"
 CARPETA=os.path.join('static/images')
@@ -93,9 +95,9 @@ def ajaxfile():
    if request.method=='POST':
       userid= request.form['userid']
 
-      personas=consultaId(userid)
+      personas,total=Productoscliente.consulta(userid)
 
-   return jsonify({'htmlresponse': render_template('admin/reservasClientes.html',personas=personas )})
+   return jsonify({'htmlresponse': render_template('admin/reservasClientes.html',personas=personas,total=total )})
 
 
 @app.route('/ajaxBuscar', methods=['POST', 'GET'])
@@ -207,15 +209,23 @@ def editsd(id):
 
 @app.route('/modulo/productosVendidos')
 def mProductosV():
-   return render_template('admin/productos_vendidos.html')
+   productos=productosVendidos.consulta()
+   return render_template('admin/productos_vendidos.html',productos=productos)
 
 @app.route('/modulo/reservas')
 def mReservas():
-   return render_template('admin/reservas.html')
+   formulario=moduloreservas.prueba()
+   return render_template('admin/reservas.html',formulario=formulario)
 
-@app.route('/modulo/inventario')
-def mInventario():
-   return render_template('admin/inventario.html')
+@app.route('/aceptarReserva/<id>')
+def mInventario(id):
+  moduloreservas.Aceptar(id)
+  return redirect('/modulo/reservas')
+
+@app.route('/rechazarReserva/<id>')
+def rechazar(id):
+  moduloreservas.rechazar(id)
+  return redirect('/modulo/reservas')
 
 # cliente 
 @app.route('/cliente/almacenados')
