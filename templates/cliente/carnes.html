@@ -1,224 +1,168 @@
 {% extends "layout.html" %}
 
-{% block content %}
-
+{% block estilos %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="stylesheet" href="../../static/css/index_cliente.css">
-<br>
-<center>
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://cdn.icreatia.es/media/mageplaza/blog/post/uploads/Logos-baja.jpg" class="d-block w-50" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://storage.googleapis.com/www-paredro-com/uploads/2019/11/9d366668-las-marcas-con-logos-minimalistas-va-en-aumento-%C2%BFpor-que%CC%81.jpg" class="d-block w-50" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</center>
-<br>
+  
+<style>
+ body {
+        background-color: #eaeded;
+    }
+.producto{
+   margin: 20px;
+   }
+.producto1{
+  background-color: #eaeded;
+}
+</style>
+ {% endblock %}
+
+{% block busqueda %}
+<form class="d-flex" id="formBusqueda">
+              <input class="form-control me-2" type="search" placeholder="Buscar" name="buscar" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit">Buscar</button>
+            </form>
+             
+{% endblock %}
 
 
+{% block content %}
+<div class= "ProductoEncontrado">
 
-
-<div class="border">
-  <center>
-      <br>
-      <div class="contec">
-          <div class="row">
-              <div class="col">
-                  <h2>Carne roja</h2>
-                  <img src="/static/images/limpieza.jpg" style="width: 200px;height: 200px; ">
-<p>Guitarra fender con nueve pastillas y modulaciones</p> 
-<br>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Click para reservar
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade btn btn-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog ">
-      <div class="modal-content ">
-        <div class="modal-header btn btn-dark">
-          <h5 class="modal-title " id="exampleModalLabel">INGRESE LOS DATOS PARA RESERVAR</h5>
-          <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body btn btn-warning">
-            <center>
-          <!-- aqui esta para madar a la base de datos -->
-          <form class="negro" action="/carnes" method="POST">
-            <label for="">Nombres:</label><br> 
-            <input class="input form-control"" type="text" id="txtNombre" name="txtNombre" placeholder="ingrese sus nombres " value="{{nombre}}"><br>
-            <label for="">Cantidad de producto requerido:</label><br> 
-              <input class="input form-control"" type="number" id="txtCantidad" name="txtCantidad" placeholder="ingrese su cedula" value="{{cantidad}}"><br>  
-            <label for="">Cedula:</label><br> 
-             <input class="input form-control"" type="number" id="txtCedula" name="txtCedula" placeholder="ingrese su cedula" value="{{cedula}}"><br>
-             <label for="">Correo:</label><br> 
-            <input type="email" class="form-control" id="txtCorreo" name="txtCorreo"  value="{{correo}}"  placeholder="Ingrese su correo"><br>
-             <label for="">fecha para reservar su entrega:</label><br> 
-             <input class="input form-control" type="date" id="txtFecha" name="txtFecha" placeholder="Ingrese fecha para reservar" value="{{fecha}}"><br>
-             <br> 
-             <div>
-             <button type="submit" class="botons btn btn-success">Reservar</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-          </div>      
-         </form>
-        </center>
-<!-- aqui termina para mandar a la base de datos -->
-        </div>
-      </div>
-    </div>
-  </div>
-              </div>
-              <div class="col">
-                <h2>Carne blanca</h2>
-                <img src="/static/images/bebidas.jpg" style="width: 200px;height: 200px; ">
-<p>Bajo electrico con 3 pastillas, modulaciones y sonidos estandar</p>
-<br>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Click para reservar
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade btn btn-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog ">
-      <div class="modal-content ">
-        <div class="modal-header btn btn-dark">
-          <h5 class="modal-title " id="exampleModalLabel">INGRESE LOS DATOS PARA RESERVAR</h5>
-          <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body btn btn-warning">
-            <center>
-          <!-- aqui esta para madar a la base de datos -->
-          <form class="negro" action="/carnes" method="POST">
-            <label for="">Nombres:</label><br> 
-            <input class="input form-control"" type="text" id="txtNombre" name="txtNombre" placeholder="ingrese sus nombres " value="{{nombre}}"><br>
-            <label for="">Cantidad de producto requerido:</label><br> 
-              <input class="input form-control"" type="number" id="txtCantidad" name="txtCantidad" placeholder="ingrese su cedula" value="{{cantidad}}"><br>  
-            <label for="">Cedula:</label><br> 
-             <input class="input form-control"" type="number" id="txtCedula" name="txtCedula" placeholder="ingrese su cedula" value="{{cedula}}"><br>
-             <label for="">Correo:</label><br> 
-            <input type="email" class="form-control" id="txtCorreo" name="txtCorreo"  value="{{correo}}"  placeholder="Ingrese su correo"><br>
-             <label for="">fecha para reservar su entrega:</label><br> 
-             <input class="input form-control" type="date" id="txtFecha" name="txtFecha" placeholder="Ingrese fecha para reservar" value="{{fecha}}"><br>
-             <br> 
-             <div>
-             <button type="submit" class="botons btn btn-success">Reservar</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-          </div>      
-         </form>
-        </center>
-<!-- aqui termina para mandar a la base de datos -->
-        </div>
-      </div>
-    </div>
-  </div>
-            </div>
-              <div class="col">
-                  <h2>Carne de Vacuno </h2>
-                  <img src="/static/images/carnes.jpg" style="width: 200px;height: 200px; ">
-<p>Bajo electrico con 3 pastillas, modulaciones y sonidos estandar</p>
-<br>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Click para reservar
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade btn btn-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog ">
-      <div class="modal-content ">
-        <div class="modal-header btn btn-dark">
-          <h5 class="modal-title " id="exampleModalLabel">INGRESE LOS DATOS PARA RESERVAR</h5>
-          <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body btn btn-warning">
-            <center>
-          <!-- aqui esta para madar a la base de datos -->
-          <form class="negro" action="/carnes" method="POST">
-            <label for="">Nombres:</label><br> 
-            <input class="input form-control"" type="text" id="txtNombre" name="txtNombre" placeholder="ingrese sus nombres " value="{{nombre}}"><br>
-            <label for="">Cantidad de producto requerido:</label><br> 
-              <input class="input form-control"" type="number" id="txtCantidad" name="txtCantidad" placeholder="ingrese su cedula" value="{{cantidad}}"><br>  
-            <label for="">Cedula:</label><br> 
-             <input class="input form-control"" type="number" id="txtCedula" name="txtCedula" placeholder="ingrese su cedula" value="{{cedula}}"><br>
-             <label for="">Correo:</label><br> 
-            <input type="email" class="form-control" id="txtCorreo" name="txtCorreo"  value="{{correo}}"  placeholder="Ingrese su correo"><br>
-             <label for="">fecha para reservar su entrega:</label><br> 
-             <input class="input form-control" type="date" id="txtFecha" name="txtFecha" placeholder="Ingrese fecha para reservar" value="{{fecha}}"><br>
-             <br> 
-             <div>
-             <button type="submit" class="botons btn btn-success">Reservar</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-          </div>      
-         </form>
-        </center>
-<!-- aqui termina para mandar a la base de datos -->
-        </div>
-      </div>
-    </div>
-  </div>
-              </div>
-              <div class="col">
-                <h2>Carne de ave</h2>
-                <img src="/static/images/vegetales.jpg" style="width: 200px;height: 200px; ">
-<p>Bajo electrico con 3 pastillas, modulaciones y sonidos estandar</p>
-<br>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Click para reservar
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade btn btn-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog ">
-      <div class="modal-content ">
-        <div class="modal-header btn btn-dark">
-          <h5 class="modal-title " id="exampleModalLabel">INGRESE LOS DATOS PARA RESERVAR</h5>
-          <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body btn btn-warning">
-            <center>
-          <!-- aqui esta para madar a la base de datos -->
-          <form class="negro" action="/carnes" method="POST">
-            <label for="">Nombres:</label><br> 
-            <input class="input form-control"" type="text" id="txtNombre" name="txtNombre" placeholder="ingrese sus nombres " value="{{nombre}}"><br>
-            <label for="">Cantidad de producto requerido:</label><br> 
-              <input class="input form-control"" type="number" id="txtCantidad" name="txtCantidad" placeholder="ingrese su cedula" value="{{cantidad}}"><br>  
-            <label for="">Cedula:</label><br> 
-             <input class="input form-control"" type="number" id="txtCedula" name="txtCedula" placeholder="ingrese su cedula" value="{{cedula}}"><br>
-             <label for="">Correo:</label><br> 
-            <input type="email" class="form-control" id="txtCorreo" name="txtCorreo"  value="{{correo}}"  placeholder="Ingrese su correo"><br>
-             <label for="">fecha para reservar su entrega:</label><br> 
-             <input class="input form-control" type="date" id="txtFecha" name="txtFecha" placeholder="Ingrese fecha para reservar" value="{{fecha}}"><br>
-             <br> 
-             <div>
-             <button type="submit" class="botons btn btn-success">Reservar</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-          </div>      
-         </form>
-        </center>
-<!-- aqui termina para mandar a la base de datos -->
-        </div>
-      </div>
-    </div>
-  </div>
-            </div>
-          </div>
-      </div> </br>
-  </center>
+ <div class= "CuerpoEncontrado">
+  </div> 
 </div>
 
+<br>
+<div class = "container">
+  <center>
+  <div id="ExampleControls" class="slide" data-bs-ride="">
+      <div class="inner">
+        <div class="item active">
+          <img src="/static/images/Publicidad.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+  </center>
+
+</div>
+<br>
+<div class="border">
+<div class="row">
+  <div class="col">
+  <table class="table table-bordered table-hover table-secondary">
+  <tr><td class="bg-success"><a class="nav-link text-white" href="">Categorias</a></td></tr>
+  <tr><td><a class="nav-link text-dark"  href="/cliente/limpieza">Productos de Limpieza</a></td></tr>
+  <tr><td><a class="nav-link text-dark" href="/cliente/bebidas">Bebidas y Lacteos</a></td></tr>
+  <tr><td><a class="nav-link text-dark" href="/cliente/carnes">Carnes</a></td></tr>
+  <tr><td><a class="nav-link text-dark" href="/cliente/vegetales">Vegetales</a></td></tr>
+  </table>
+  </div>
+  <div class="col col-9">
+<div class="container"> 
+  <div class="contec">
+    <div class="row">
+      {% for p in carnes %}
+      
+        <div class="col col-3 producto">
+          <div class= "container border producto1 border-dark">
+          <center>
+           <div class "nombre"> <p class="text-center text-secondary text-end fw-bold">{{p[2]}}</p> </div>
+           <div class "foto">  <img class= "img-thumbnail" width= "200px" src="/static/images/{{p[5]}}"> </img> </div>
+           <div class "precio"> ${{p[3]}} </div>
+           <div class "boton">  
+           <button type="button" class="btn btn-primary botonlimpieza"  data-id="{{p[0]}}">
+           Click para reservar
+           </button> 
+            <!-- Modal -->
+           </div>
+          </cente>
+          </div>
+      
+       </div>
+       <br>
+                  
+                  
+      {% endfor %}
+
+    </div>
+  </div>
+ </div>
+</div>
+
+  </div>
+</div>
+ 
+<div class="modal fade btn btn-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog ">
+                  <div class="modal-content ">
+                    <div class="modal-header btn btn-dark">
+                      <h5 class="modal-title " id="exampleModalLabel">INGRESE LOS DATOS PARA RESERVAR</h5>
+                      <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body btn btn-warning">
+                      
+                      <!-- aqui termina para mandar a la base de datos -->
+                    </div>
+                  </div>
+                </div>
+</div>
+              
+<script type="text/javascript">
+
+  $(document).ready(function(){
+                $('.botonlimpieza').click(function(){
+                    var userid = $(this).data('id');
+                    $.ajax({
+                        url: '/ajaxlimpieza',
+                        type: 'post',
+                        data: {userid: userid},
+                        success: function(data){ 
+                           
+                            $('.modal-body').html(data);
+                            $('.modal-body').append(data.respuesta);
+                            $('#exampleModal').modal('show');
+
+                        }
+                    });
+                });
+function ajaxBuscarP(){
+                    $.ajax({
+                        url: '/ajaxBuscarP',
+                        data: $('form').serialize(),
+                        type: 'POST',
+                        success: function(data){
+                            // console.log(data);
+                            $('.CuerpoEncontrado').html(data);
+                            $('.CuerpoEncontrado').append(data.htmlresponse);
+                            //$('#empModal2').modal('show');
 
 
+                        },
+                        error: function(error){
+                            console.log(error);
+                        }
+                    });
+                };
+
+                $('#formBusqueda').submit(function(event){
+                    event.preventDefault();
+                    $('.Ocultar').hide();
+                    $('.mostrar').show();
+                    $('.Navegacionindex').hide();
+                    ajaxBuscarP();
+                });
+                
 
 
+                           });
+
+</script>
+  
+  
+              
 
 
 <!-- JavaScript Bundle with Popper -->
@@ -230,4 +174,5 @@
 
 
 
+    
     

@@ -32,22 +32,43 @@
 
             {% endwith %}
             <br>
-            <form class="" action="/registrar" method="POST">
+            <form class="" action="" method="POST">
                <label for="">Nombre:</label><br> 
-                <input class="input" type="text" id="txtNombre" name="txtNombre" placeholder="Nombre" value="{{name}}"><br>
+                {{form.nombre(class_="input")}}
+                {% for error in form.nombre.errors %}
+                    <span style="color: brown;"> {{error}}</span>
+                    <br>
+                {% endfor %}
             <label for="">Direccion:</label><br> 
-                <input class="input" type="text" id="txtDireccion" name="txtDireccion" placeholder="Direccion" value="{{dir}}"><br>
-                 <label for="">Telefono:</label><br> 
-                <input class="input" type="text" id="txtTelefono" name="txtTelefono" placeholder="Telefono" value="{{telf}}"><br>
-                 <label for="">Email:</label><br> 
-                <input class="input" type="text" id="txtEmail" name="txtEmail" placeholder="Email" value="{{email}}"><br>
+                {{form.direccion(class_="input")}}
+                {% for error in form.direccion.errors %}
+                    <span style="color: brown;"> {{error}}</span>
+                    <br>
+                {% endfor %}
+                
+                 <label for="">Telefono:</label><br>
+                {{form.telefono(class_="input")}}
+                {% for error in form.telefono.errors %}
+                    <span style="color: brown;"> {{error}}</span>
+                    <br>
+                {% endfor %}
+                 <label placeholder="Ingrese Email" for="">Email:</label><br> 
+                 {{form.correo(class_="input")}}
+                 {% for error in form.correo.errors %}
+                     <span style="color: brown;"> {{error}}</span>
+                     <br>
+                 {% endfor %}
                <label for="">Contraseña:</label><br> 
-                <input class="input" type="password" id="txtClave1" name="txtClave1" placeholder="Contraseña" value="{{clave1}}"><br>
-                 <label for="">Repita la contraseña:</label><br> 
-                <input class="input" type="password" id="txtClave2" name="txtClave2" placeholder="Repita la contraseña" value="{{clav2}}"><br>
+                {{form.clave(class_="input")}}
+                {% for error in form.clave.errors %}
+                    <span style="color: brown;"> {{error}}</span>
+                    <br>
+                {% endfor %}
+                <br>
                  <p>Al registrate aceptas los Terminos y Condiciones </p> 
+                 {{form.hidden_tag()}}
                 <button type="submit" class="botons">Registrarse</button>
-                <p>¿Ya tiene cuenta? <a href="./">Ingresar</a></p>
+                <p>¿Volver? <a href="/users/login">Ingresar</a></p>
 
             </form>
 
@@ -55,4 +76,3 @@
     </div>
 </body>
 </html>
-    
